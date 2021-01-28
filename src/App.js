@@ -55,7 +55,9 @@ class App extends React.Component {
   }
 }
 
+//A function that gets a dispatch property and will return an object. 
 const mapDispatchToProps = dispatch => ({
+  
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
