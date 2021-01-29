@@ -10,8 +10,8 @@ export const PreviewCollection = ({ title, items }) => {
         {items
           //Appear just 4 items for each Collection
           .filter((item, index) => index < 4)
-          .map(({ id, ...otherItemProps }) => {
-            return <CollectionItem key={id} {...otherItemProps} />;
+          .map(item => {
+            return <CollectionItem key={item.id} item={item} />;
           })}
       </div>
     </div>
