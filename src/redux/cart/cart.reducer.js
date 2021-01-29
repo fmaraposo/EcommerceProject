@@ -9,6 +9,7 @@ const cartReducer = (state=INITIAL_STATE, action) => {
         case CartActionTypes.TOOGLE_CART_HIDDEN:
             return {
                 ...state,
+                //If it's true I want it to be false
                 hidden: !state.hidden
             }
         default:
