@@ -1,6 +1,6 @@
 export const addItemToCart = (cartItems, cartItemToAdd) => {
     //Checking if the item we are adding already exists in the Array
-    const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id )
+    const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id)
 
     if(existingCartItem) {
         //if it exists we will create a new array by mapping the original array
