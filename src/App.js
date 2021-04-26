@@ -6,6 +6,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shoppage/shoppage.component';
 import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
+import CheckoutPage from './pages/checkout/checkout.component'
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.action';
 
@@ -50,6 +51,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
+          <Route exact path="/checkout" component={CheckoutPage} />
           {/* conditional if the user is signed in he/she can't access SignIn Component and will be redirected to Home */}
           <Route exact path="/signin" render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage/>)} />
         </Switch>
