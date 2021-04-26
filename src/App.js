@@ -9,6 +9,8 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.action';
 
+import {selectCurrentUser} from './redux/user/user.selectors'
+
 import './App.css';
 
 class App extends React.Component {
@@ -56,8 +58,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({user}) => ({
-  currentUser:user.currentUser
+const mapStateToProps = (state) => ({
+  currentUser:selectCurrentUser(state)
 })
 
 //A function that gets a dispatch property and will return an object. 

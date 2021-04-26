@@ -8,6 +8,8 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import './header.styles.scss';
 
+import {selectCurrentUser} from '../../redux/user/user.selectors'
+
 const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
@@ -39,12 +41,12 @@ const Header = ({ currentUser, hidden }) => {
   );
 };
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+const mapStateToProps = (state) => ({
   //this function should return an object
   //the property should be the value we pass in the component and the value the value of it.
   //In this case in this function we want to get the state object. The state here is the root reducer
-  currentUser,
-  hidden,
+  currentUser: selectCurrentUser(state),
+  hidden: state.cart.hidden
 });
 
 export default connect(mapStateToProps)(Header);
