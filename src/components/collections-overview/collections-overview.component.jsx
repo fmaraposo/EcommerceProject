@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 
 import {PreviewCollection} from '../../components/preview-collection/preview-collection.component'
-import {selectShopCollections} from '../../redux/shop/shop.selectors'
+import {selectCollectionsForPreview} from '../../redux/shop/shop.selectors'
 
 const CollectionsOverview = ({collections}) => {
     return (
@@ -20,7 +20,7 @@ const CollectionsOverview = ({collections}) => {
 
 const mapStateToProps = (state) => {
     return {
-        collections: selectShopCollections(state)
+        collections: selectCollectionsForPreview(state)
     }
     
 }
